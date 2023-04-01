@@ -64,7 +64,7 @@ async def root():
 async def get_Crop(crop: str):
     to_return = {}
     if crop == "Onion":
-        for i in len(range(onion_data.stress_dict)):
+        for i in range(len(onion_data.stress_dict)):
             to_return.update({i : onion_data.stress_dict[i]})
         return to_return
     else:
