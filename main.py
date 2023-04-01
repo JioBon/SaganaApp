@@ -1,7 +1,55 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from Crop import Crop
 
 app = FastAPI()
+
+# Onion
+onion_stress = ["Botrytis leaf blight", "Downy Mildew", "Armyworm", "Leaf Miner"]
+onion_stressDesc = [ 
+    """Botrytis leaf blight, sometimes also referred to as Botrytis leaf spot, occurs on onions. 
+    White, sunken spots on leaves are usually the first sign of infection. Spots are small, oval-shaped, and range from 0.06 to 0.25 inch (0.5–6 mm) long. 
+    They sometimes have a light-green halo and may appear water-soaked. The epidermis around the spots may be silvery. 
+    When numerous spots are present, leaf tips die back, and whole leaves may eventually die.""",
+    """
+    At the field level, symptoms of downy mildew are first noticed as circular clumps of yellowed plants that are a few to many feet in diameter. 
+    As the disease progresses, the yellowing patterns often enlarge in the direction of prevailing winds.
+    On individual plants, leaf tissue becomes pale green, then tan to brown or yellow, and finally collapses. Lesions may exhibit a violet-to-purple color. 
+    When leaves are wet, or when humidity is very high, signs of Peronospora destructor are visible on the surface of older leaves as fine, furry, grayish-white growths. 
+    These growths may later turn purple or brown as a result of a secondary infection of the lesion by other fungi, 
+    such as those that cause PURPLE BLOTCH AND STEMPYLIUM LEAF BLIGHT, as these fungi can produce purple pigmentation and dark spores.
+    """,
+    """
+
+    """,
+    """
+    Adults have yellow heads, knees, sides of abdomens; otherwise mostly dark gray, just over 1/10 inch long.
+    Pupae are red-brown, slightly longer than adults.
+    Larvae are white to yellow, up to about 1/3 inch long.
+    Eggs are white, about 1/50 inch long, found on leaves.
+    Adult feeding holes found in rows, with milky white sap coming out.
+    """
+    ]
+onion_stressSoln = [
+    ["apply appropriate fungicide sprays"],
+    ["""
+    Spray at the first sign of the disease. After the first spray, scout fields and make subsequent applications when weather conditions are favorable for the disease. 
+    Rotate with fungicides from different mode-of-action groups to reduce the risk of fungicide resistance development. 
+    Fungicides may be applied on a 7-day schedule (only as consistent with the label), if necessary. 
+    For all fungicides, thorough coverage of foliage is important in the control of downy mildew. 
+    apply appropriate foliar fungicides taking care to apply thoroughly to waxy leaves. 
+    Chlorothalonil and mancozeb are the main protectant fungicides for downy mildew.
+    """],
+    [""],
+    ["""
+    Pyrethrin This organic pesticide will kill leaf miners as they leave the egg and enter the leaf. 
+    Since they have to chew into the leaf, they ingest the poison with the leaf and die. 
+    However, pyrethrin also kills good insects such as bee and leaf miner preditors. 
+    Use to spot treat concentrations of leaf miners rather than blanket the whole garden with it. 
+    Be sure you get it on the bottom side of the leaf.
+    """]
+]
+onion_data = Crop("Onion", "Allium cepa", onion_stress, onion_stressDesc, onion_stressSoln)
 
 class Msg(BaseModel):
     msg: str
@@ -9,12 +57,15 @@ class Msg(BaseModel):
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World. Welcome to FastAPI!"}
+    return {"message": "Welcome to SaganaAPI!"}
 
 
-@app.get("/path")
-async def demo_get():
-    return {"message": "This is /path endpoint, use a post request to transform the text to uppercase"}
+@app.get("/{crop}")
+async def get_Crop(crop: str):
+    if crop == "Onion":     
+        return onion_data.call_dict
+    else:
+        return {"message": f"{crop} no on the list"}
 
 
 @app.post("/path")
