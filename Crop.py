@@ -3,8 +3,8 @@ class Crop:
         self.crop = crop
         self.sci_name = sci_name
         self.stress_dict = []
-        for i in stresses:
-            self.stress_dict.append({"Stress": stresses[i], "Description": descriptions[i], "Solutions": solutions[i]})
+        for i in range(len(stresses)):
+            self.stress_dict.append({"Crop": self.crop, "Stress": stresses[i], "Description": descriptions[i], "Solutions": solutions[i]})
 
     def call_crop(self):
         return f"{self.crop}"
