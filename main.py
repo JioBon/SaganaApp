@@ -65,7 +65,7 @@ async def get_Crop(crop: str):
     to_return = {}
     if crop == "Onion":
         for i in range(len(onion_data.stress_dict)):
-            to_return.update({i : onion_data.stress_dict[i]})
+            to_return.update({"id": i, "stress": onion_data.stress_dict[i]})
         return to_return
     else:
         return {"message": f"{crop} no on the list"}
