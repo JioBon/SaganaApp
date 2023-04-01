@@ -49,6 +49,11 @@ onion_stressSoln = [
     Be sure you get it on the bottom side of the leaf.
     """.strip()]
 ]
+for i in range(len(onion_stressSoln)):
+    temp_list = []
+    for j in range(len(onion_stressSoln[i])):
+        temp_list = {"id": j, "Solution": onion_stressSoln[i][j]}
+    onion_stressSoln[i] = temp_list
 onion_data = Crop("Onion", "Allium cepa", onion_stress,  onion_stressDesc, onion_stressSoln)
 
 class Msg(BaseModel):
