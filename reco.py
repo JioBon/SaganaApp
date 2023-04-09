@@ -128,7 +128,7 @@ eggplant_stressDesc = [
     Leaf miner damage can result in wilting, stunting, and decreased crop yield.
     
     Leaf miners are difficult to control once they have become established, as the larvae are protected within the leaf tissue. Early detection is key to preventing their spread. 
-    Signs of leaf miner infestation on eggplants include the appearance of winding tunnels on the leaves, and small black flies hovering around the plants.""".replace('\n', "")
+    Signs of leaf miner infestation on eggplants include the appearance of winding tunnels on the leaves, and small black flies hovering around the plants.""".replace('\n', ""),
 
     #Aphids
     """Aphids are small, soft-bodied insects that can infest eggplants and other plants, feeding on the sap of the plant. 
@@ -170,7 +170,7 @@ eggplant_stressDesc = [
     To control leaf roller moths on eggplants, it's important to implement an integrated pest management (IPM) approach that combines different control methods. 
     This can include cultural control methods, such as crop rotation and sanitation, as well as biological control methods, such as the use of natural predators or parasites. Chemical control methods can also be used, but should be used judiciously to minimize the impact on non-target organisms and the environment.
     """.replace('\n', ""),
-    ]
+]
 eggplant_stressSoln = [
 
     # Cercospora leaf spot
