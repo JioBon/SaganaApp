@@ -99,7 +99,7 @@ onion_stressSoln = [
 
 
 # Eggplant
-eggplant_stress = ["Cercospora leaf spot", "Powdery Mildew", "Armyworm", "Leaf Miner", "Aphids", "Flea beetle", "White Flies", "Potato Beetle", "Leaf roller moth"]
+eggplant_stress = ["Cercospora leaf spot", "Powdery Mildew", "Armyworm", "Leaf Miners", "Aphids", "Flea beetle", "White Flies", "Potato Beetle", "Leaf roller moth"]
 eggplant_stressDesc = [ 
     #Cercospora leaf spot
     """Cercospora leaf spot is a fungal disease that affects eggplants, causing brown or grayish lesions on the leaves. 
@@ -292,7 +292,7 @@ eggplant_stressSoln = [
 ]
 
 # Corn
-corn_stress = ["Leaf Spot", "Powdery Mildew", "Armyworm", "Leaf Miner", " Corn Borer", "Eye Spot", "White Flies", "Corn borer midrib feeding"]
+corn_stress = ["Leaf Spot", "Powdery Mildew", "Armyworm", "Leaf Miners", " Corn Borer", "Eye Spot", "White Flies", "Corn borer midrib feeding"]
 corn_stressDesc = [ 
     #Leaf Spot
     """Leaf spot is a common disease that affects corn plants. It is caused by several different fungal pathogens, including Helminthosporium spp., Cercospora spp., and Bipolaris spp. 
