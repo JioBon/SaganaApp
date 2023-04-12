@@ -1,5 +1,5 @@
 # Onion
-onion_stress = ["Botrytis leaf blight", "Downy Mildew", "Armyworm", "Leaf Miner"]
+onion_stress = ["Botrytis leaf blight", "Downy Mildew", "Armyworm", "Leaf Miners"]
 onion_stressDesc = [ 
     """Botrytis leaf blight -  sometimes also referred to as Botrytis leaf spot, occurs on onions. 
     White, sunken spots on leaves are usually the first sign of infection. Spots are small, oval-shaped, and range from 0.06 to 0.25 inch (0.5–6 mm) long. 
