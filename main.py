@@ -111,14 +111,7 @@ async def root():
 @app.get("/allStress")
 async def get_All():
     to_return = []
-    for i in range(len(corn_data.stress_dict)):
-        to_return.append({"id": i, "stress": corn_data.stress_dict[i]})
-    for i in range(len(onion_data.stress_dict)):
-        to_return.append({"id": i, "stress": onion_data.stress_dict[i]})
-    for i in range(len(eggplant_data.stress_dict)):
-        to_return.append({"id": i, "stress": eggplant_data.stress_dict[i]})
-    for i in range(len(tomato_data.stress_dict)):
-        to_return.append({"id": i, "stress": tomato_data.stress_dict[i]})
+    to_return.append(stress_details_df.to_dict(orient="records"))
     return to_return
 
 @app.get("/image/{image_of}")
