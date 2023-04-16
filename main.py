@@ -110,8 +110,7 @@ async def root():
 
 @app.get("/allStress")
 async def get_All():
-    to_return = []
-    to_return.append(stress_details_df.to_dict(orient="records"))
+    to_return = [d for d in plant_details if d.get("crop")]
     return to_return
 
 @app.get("/image/{image_of}")
