@@ -110,7 +110,7 @@ async def root():
 
 @app.get("/allStress")
 async def get_All():
-    to_return = [d for d in stress_details if d.get("crop")]
+    to_return = [d for d in stress_details]
     return to_return
 
 @app.get("/image/{image_of}")
