@@ -14,4 +14,4 @@ class Crop:
         return f"{self.crop}"
     
     def call_dict(self):
-        return self.stress_dict
+        return f"{self.stress_dict}"

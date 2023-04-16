@@ -29,7 +29,7 @@ onion_stressDesc = [
 onion_stressSoln = [
 
     # Botrytis leaf blight
-    ["""There are several control methods available for managing Botrytis leaf blight in onions, including chemical, biological, and cultural control.
+    """There are several control methods available for managing Botrytis leaf blight in onions, including chemical, biological, and cultural control.
     
     Chemical Control: Copper fungicides: Copper fungicides are a common chemical treatment option for Botrytis Blight. 
     They disrupt the fungal cell walls and prevent the fungus from growing.Regular Pesticides: 
@@ -43,10 +43,10 @@ onion_stressSoln = [
     Cultural Control: Botrytis leaf blight, sometimes also referred to as Botrytis leaf spot, occurs on onions. 
     White, sunken spots on leaves are usually the first sign of infection. Spots are small, oval-shaped, and range from 0.06 to 0.25 inch (0.5–6 mm) long. 
     They sometimes have a light-green halo and may appear water-soaked. The epidermis around the spots may be silvery. 
-    When numerous spots are present, leaf tips die back, and whole leaves may eventually die.""".replace('\n', "")], 
+    When numerous spots are present, leaf tips die back, and whole leaves may eventually die.""".replace('\n', ""), 
 
     # Downy Mildew
-    ["""There are several control methods available for managing Downy mildew in onions, including chemical, biological, and cultural control.
+    """There are several control methods available for managing Downy mildew in onions, including chemical, biological, and cultural control.
     
     Chemical Control: Spray at the first sign of the disease. After the first spray, scout fields and make subsequent applications when weather conditions are favorable for the disease. 
     Rotate with fungicides from different mode-of-action groups to reduce the risk of fungicide resistance development. 
@@ -61,10 +61,10 @@ onion_stressSoln = [
     
     Cultural Control: Use a 3-year rotation away from Allium crops in fields where the disease has occurred. 
     Use disease-free bulbs, sets, and seed. Remove and destroy material of any Allium plants, including residue from the previous crop, volunteer plants, and culls from storage. 
-    Avoid entering fields when leaves are wet. Avoid injuring the crop with herbicides and other.""".replace('\n', "")],
+    Avoid entering fields when leaves are wet. Avoid injuring the crop with herbicides and other.""".replace('\n', ""),
 
     # Armyworm
-    ["""There are several control methods available for managing armyworms in onions, including chemical, biological, and cultural control.
+    """There are several control methods available for managing armyworms in onions, including chemical, biological, and cultural control.
     
     Chemical Control: Chemical control is the most common method of managing armyworms in onions. 
     The use of insecticides is recommended to control the pest. The most effective insecticides for controlling armyworms in onions include pyrethroids, organophosphates, and spinosyns. 
@@ -77,10 +77,10 @@ onion_stressSoln = [
     Cultural Control: Cultural control is an effective method of managing armyworms in onions. 
     Cultural practices can be adopted through crop rotation by avoiding planting onions in the same field for consecutive seasons. 
     Remove and destroy crop debris from the field, early planting can reduce the incidence of the pest and proper plant spacing can reduce the incidence of the pest by increasing air circulation.
-    """.replace('\n', "")],
+    """.replace('\n', ""),
 
     # Leaf Miner
-    ["""There are several control methods available for managing leaf miners in onions, including chemical, biological, and cultural control.
+    """There are several control methods available for managing leaf miners in onions, including chemical, biological, and cultural control.
     
     Chemical Control: Pyrethrin, an organic pesticide, will kill leaf miners as they leave the egg and enter the leaf. 
     Since they have to chew into the leaf, they ingest the poison with the leaf and die. 
@@ -94,7 +94,7 @@ onion_stressSoln = [
     Cultural Control: is an effective and environmentally friendly method of managing leaf miners on onions, 
     which involves the adoption of various agricultural practices such as crop rotation, sanitation, mulching, plant spacing, 
     and plant selection to reduce the incidence of the pest, promote crop health, and ultimately increase yield.
-    """.replace('\n', "")]
+    """.replace('\n', "")
 ]
 
 
@@ -174,7 +174,7 @@ eggplant_stressDesc = [
 eggplant_stressSoln = [
 
     # Cercospora leaf spot
-    ["""There are several control methods available for managing Cercospora leaf spot on eggplants, including chemical, biological, and cultural control.
+    """There are several control methods available for managing Cercospora leaf spot on eggplants, including chemical, biological, and cultural control.
     
     Chemical Control: The use of fungicides is recommended to control the disease. 
     The most effective fungicides for controlling Cercospora leaf spot on eggplants include chlorothalonil, copper-based fungicides, and azoxystrobin. 
@@ -188,10 +188,10 @@ eggplant_stressSoln = [
     Remove and destroy infected plant debris to reduce the disease inoculum. 
     Avoid overhead irrigation as it can increase the humidity in the field, which favors disease development. 
     Proper fertilization can help keep the plants healthy and better able to resist the disease.
-    """.replace('\n', "")],
+    """.replace('\n', ""),
 
     # Powdery Mildew
-    ["""There are several control methods available for managing powdery mildew on onions, including chemical, biological, and cultural control.
+    """There are several control methods available for managing powdery mildew on onions, including chemical, biological, and cultural control.
     
     Chemical Control: The use of fungicides is recommended to control the disease. 
     The most effective fungicides for controlling powdery mildew on eggplants include sulfur, azoxystrobin, and trifloxystrobin. 
@@ -206,10 +206,10 @@ eggplant_stressSoln = [
     Ensure that the soil pH is maintained between 6.0 and 7.0, as this can help reduce the incidence of the disease. 
     Proper fertilization can help keep the plants healthy and better able to resist the disease. 
     Avoid planting eggplants in the same field for consecutive seasons.
-    """.replace('\n', "")],
+    """.replace('\n', ""),
 
     # Armyworm
-    ["""There are several control methods available for managing Armyworm spot on eggplants, including chemical, biological, and cultural control.
+    """There are several control methods available for managing Armyworm spot on eggplants, including chemical, biological, and cultural control.
     
     Chemical Control: Some common pesticides used to control armyworms in eggplants include carbaryl, malathion, and permethrin. 
     It is important to follow the instructions on the label and use the appropriate protective equipment while applying the pesticide. 
@@ -222,10 +222,10 @@ eggplant_stressSoln = [
     Cultural Control: Involves modifying the environment to reduce the population of armyworms. 
     One method is to remove and destroy any plant debris, as this can provide a breeding ground for armyworms. 
     Another method is to practice crop rotation, as armyworms prefer to feed on certain plants and may not survive if their preferred host is not present. 
-    Additionally, planting resistant varieties of eggplants can also help control armyworms.""".replace('\n', "")],
+    Additionally, planting resistant varieties of eggplants can also help control armyworms.""".replace('\n', ""),
 
     # Leaf Miner
-    ["""There are several control methods available for managing Leaf Miner on eggplants, including chemical, biological, and cultural control.
+    """There are several control methods available for managing Leaf Miner on eggplants, including chemical, biological, and cultural control.
 
     Chemical Control: Some common pesticides used to control leaf miners in eggplants include spinosad, neem oil, and pyrethroids. 
     It is important to follow the instructions on the label and use the appropriate protective equipment while applying the pesticide. 
@@ -237,10 +237,10 @@ eggplant_stressSoln = [
     
     Cultural Control: One method is to remove and destroy any infested leaves, as this can reduce the number of leaf miners. 
     Another method is to use row covers to prevent adult leaf miners from laying eggs on the plants. Additionally, planting resistant varieties of eggplants can also help control leaf miners.
-    """.replace('\n', "")],
+    """.replace('\n', ""),
 
     # Aphids
-    ["""There are several control methods available for managing Aphids on eggplants, including chemical, biological, and cultural control.
+    """There are several control methods available for managing Aphids on eggplants, including chemical, biological, and cultural control.
 
     Chemical Control: Some common pesticides used to control aphids in eggplants include insecticidal soaps, neem oil, and pyrethroids. 
     It is important to follow the instructions on the label and use the appropriate protective equipment while applying the pesticide. However, repeated use of pesticides can lead to the development of resistance in aphids and can also harm beneficial insects, such as bees and other pollinators.
@@ -248,47 +248,47 @@ eggplant_stressSoln = [
     Biological Control: Some natural enemies of aphids include lady beetles, lacewings, and parasitic wasps. One effective biological control method for aphids is releasing lady beetles, which feed on the aphids and their eggs. Another method is releasing lacewings, which feed on both aphids and other pest insects. This method is safe for the environment and does not harm other beneficial insects.
     
     Cultural Control: One method is to remove and destroy any infested leaves or plants, as this can reduce the number of aphids. Another method is to use reflective mulches, which can disorient aphids and prevent them from finding the plants. Additionally, planting companion plants, such as marigolds or garlic, can also help control aphids.
-    """.replace('\n', "")],
+    """.replace('\n', ""),
 
     # Flea beetle
-    ["""There are several control methods available for managing Flea beetle on eggplants, including chemical, biological, and cultural control.
+    """There are several control methods available for managing Flea beetle on eggplants, including chemical, biological, and cultural control.
 
     Chemical Control: Some common pesticides used to control flea beetles in eggplants include carbaryl, pyrethroids, and neonicotinoids. It is important to follow the instructions on the label and use the appropriate protective equipment while applying the pesticide. However, repeated use of pesticides can lead to the development of resistance in flea beetles and can also harm beneficial insects, such as bees and other pollinators.
     
     Biological Control: Natural enemies of flea beetles include parasitic wasps and predatory insects like ladybugs. One effective biological control method for flea beetles is releasing beneficial nematodes in the soil. These microscopic worms will attack the larvae of the flea beetles, reducing their population.
     
     Cultural Control: One method is to use row covers to physically exclude the beetles from the plants. Another method is to plant eggplants earlier in the season, as flea beetles tend to be more active in late spring and early summer. Additionally, removing any weeds or debris around the plants can also help reduce the population of flea beetles.
-    """.replace('\n', "")],
+    """.replace('\n', ""),
 
     # White Flies
-    ["""There are several control methods available for managing White Flies on eggplants, including chemical, biological, and cultural control.
+    """There are several control methods available for managing White Flies on eggplants, including chemical, biological, and cultural control.
 
     Chemical Control: Using chemical insecticides can help control whiteflies, but it's important to use them carefully and in accordance with the instructions on the label. Some insecticides that may be effective against whiteflies on eggplants include neonicotinoids, pyrethroids, and insecticidal soaps. Always follow the instructions on the label carefully and avoid spraying during the heat of the day, which can cause damage to the plants. Make sure to follow any recommended waiting periods before harvesting.
     
     Biological Control: Using natural predators or parasites to control the whitefly population. Some examples of biological control agents that can be effective against whiteflies on eggplants include ladybugs, lacewings, and parasitic wasps. These can be purchased from garden supply stores or online and released onto your eggplants. Some companion plants such as marigolds or alyssum can also attract beneficial insects to the garden.
     
     Cultural Control: Remove weeds around your eggplants, which can harbor whiteflies. You can also try using row covers or netting to physically block whiteflies from accessing your plants. Regularly checking your plants for signs of infestation and removing any affected leaves can also help prevent the spread of whiteflies.
-    """.replace('\n', "")],
+    """.replace('\n', ""),
 
     # Potato Beetle
-    ["""There are several control methods available for managing Potato Beetle on eggplants, including chemical, biological, and cultural control.
+    """There are several control methods available for managing Potato Beetle on eggplants, including chemical, biological, and cultural control.
 
     Chemical Control: Insecticides that may be effective include pyrethroids, neonicotinoids, and spinosad. Always follow the instructions on the label carefully and avoid spraying during the heat of the day, which can cause damage to the plants. Make sure to follow any recommended waiting periods before harvesting.
     
     Biological Control: Examples of biological control agents that can be effective against potato beetles on eggplants include ladybugs, lacewings, and parasitic wasps. These can be purchased from garden supply stores or online and released onto your eggplants. Some companion plants such as dill, cilantro, or parsley can attract beneficial insects to the garden.
     
     Cultural Control: Practice crop rotation and avoid planting eggplants in the same location each year. You can also try using row covers or netting to physically block potato beetles from accessing your plants. Regularly checking your plants for signs of infestation and removing any affected leaves can also help prevent the spread of potato beetles.
-    """.replace('\n', "")],
+    """.replace('\n', ""),
 
     # Leaf roller moth
-    ["""There are several control methods available for managing Leaf roller moth on eggplants, including chemical, biological, and cultural control.
+    """There are several control methods available for managing Leaf roller moth on eggplants, including chemical, biological, and cultural control.
     
     Chemical Control: There are many chemical insecticides available that can be used to control leaf roller moths, such as pyrethroids, neonicotinoids, and organophosphates. However, it's important to use these pesticides judiciously and follow the label instructions carefully to avoid harming non-target organisms and to minimize the environmental impact.
     
     Biological Control: One example of biological control is the use of Trichogramma wasps, which lay their eggs in the eggs of the leaf roller moths, preventing them from hatching. Other natural predators, such as lacewings, ladybugs, and parasitic wasps, can also be used to control leaf roller moths.
     
     Cultural Control: Involves modifying the environment to make it less favorable for the development and survival of leaf roller moths. This can include practices such as crop rotation, weed control, and sanitation. For example, removing plant debris and fallen fruits from the field can help reduce the number of overwintering sites for the leaf roller moth.
-    """.replace('\n', "")]
+    """.replace('\n', "")
 ]
 
 # Corn
@@ -350,7 +350,7 @@ corn_stressDesc = [
 
 corn_stressSoln = [
     # Leaf Spot
-    ["""To control leaf spot on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
+    """To control leaf spot on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
 
     Chemical Control: There are numerous fungicides available for control of Gray leaf spot.  
     However, there is no guarantee that fungicide applications will result in economic returns, especially if they are applied to highly resistant hybrids in fields with little disease.  For this reason it is important to scout fields for symptoms of Gray leaf spot and apply fungicides only when they are needed.  Scouts should pay particular attention to the lower three leaves of the corn plant from the period just before tasseling to two weeks after tasseling.  If at least 50% of plants in a field have disease present on the third leaf below the ear leaf or higher prior to tasseling, the hybrid is susceptible, and the conditions are favorable for disease, then a spray may be warranted.  Gray leaf spot severity is unpredictable and multiple factors should be considered when making the decision to use fungicides to control Gray leaf spot.  Always follow label directions when applying a fungicide.
@@ -358,10 +358,10 @@ corn_stressSoln = [
     Biological Control: Involves the use of natural enemies, such as beneficial microorganisms, to control leaf spot. One example of biological control is the use of biocontrol agents, such as Trichoderma spp., Bacillus spp., or Pseudomonas spp., which can colonize the plant's roots and leaves, and produce antifungal compounds that suppress the growth of leaf spot pathogens.
     
     Cultural Control: Involves modifying the environment to make it less favorable for the development and spread of leaf spot. This can include practices such as crop rotation, planting resistant varieties, and sanitation. For example, removing infected plant debris and avoiding overhead irrigation can help reduce the spread of leaf spot. Other cultural practices that can help prevent leaf spot infections include planting corn in well-drained soil, avoiding planting corn in fields with a history of leaf spot infections and providing proper nutrition and avoiding over-fertilization, which can increase susceptibility to leaf spot.
-    """.replace('\n', "")], 
+    """.replace('\n', ""), 
 
     # Powdery Mildew
-    ["""To control Powdery Mildew on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
+    """To control Powdery Mildew on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
      
      Chemical Control: There are many fungicides available that can be used to control powdery mildew on corns, such as sulfur, triazoles, and strobilurins. 
      However, it's important to use these fungicides judiciously and follow the label instructions carefully to avoid harming non-target organisms and to minimize the environmental impact.
@@ -374,10 +374,10 @@ corn_stressSoln = [
      For example, removing infected plant debris and avoiding overhead irrigation can help reduce the spread of powdery mildew. 
      Other cultural practices that can help prevent powdery mildew infections include planting corn in well-drained soil, avoiding planting corn in fields with a history of powdery mildew infections, 
      and Providing proper nutrition and avoiding over-fertilization, which can increase susceptibility to powdery mildew.
-    """.replace('\n', "")],
+    """.replace('\n', ""),
 
     # Armyworm
-    ["""To control Armyworm on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
+    """To control Armyworm on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
      
     Chemical Control: There are many insecticides available that can be used to control armyworms on corns, such as pyrethroids, carbamates, and organophosphates. 
     However, it's important to use these insecticides judiciously and follow the label instructions carefully to avoid harming non-target organisms and to minimize the environmental impact.
@@ -387,20 +387,20 @@ corn_stressSoln = [
     Cultural Control: Cultural control involves modifying the environment to make it less favorable for the development and spread of armyworms. This can include practices such as crop rotation, planting resistant varieties, and sanitation. 
     For example, removing crop residues and weeds from the field can help reduce the population of armyworms, planting corn early in the season to avoid peak armyworm activity.
     
-    """.replace('\n', "")],
+    """.replace('\n', ""),
 
     # Leaf Miner
-    ["""To control Leaf Miner on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
+    """To control Leaf Miner on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
      
      Chemical Control: Chemical control involves the use of insecticides to prevent or treat leaf miner infestations. There are many insecticides available that can be used to control leaf miners on corns, such as pyrethroids, carbamates, and organophosphates. However, it's important to use these insecticides judiciously and follow the label instructions carefully to avoid harming non-target organisms and to minimize the environmental impact.
      
      Biological Control: One example of biological control is the use of parasitic wasps or flies that lay their eggs in the leaf miner larvae, causing their death. Another example is the use of insect-killing fungi, such as Beauveria bassiana, which can infect and kill leaf miners.
      
      Cultural Control: Cultural control involves implementing farming practices that discourage pest infestations. Some cultural practices that can help control leaf miner on corns include planting corn in different fields each year to reduce pest build-up, early planting can help avoid peak leaf miner populations, regular weeding which helps to remove alternative host plants and reduce leaf miner populations.
-    """.replace('\n', "")],
+    """.replace('\n', ""),
 
     # Corn Borer
-    ["""To control Corn Borer on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
+    """To control Corn Borer on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
      
     Chemical Control: There are several insecticides that are effective against corn borers, including chlorpyrifos, bifenthrin, and cypermethrin. It is important to follow the label instructions carefully and apply insecticides when corn borers are in their most susceptible stages.
     
@@ -409,10 +409,10 @@ corn_stressSoln = [
     Cultural Control: Cultural control involves using practices that make the environment less favorable for corn borers. Some strategies include choosing corn hybrids that have been bred for resistance to corn borers can reduce the need for chemical or biological control, planting corn early or late in the season can reduce the risk of corn borer infestations, and plowing or disking the soil can disrupt corn borer overwintering sites and reduce populations.
 
 
-    """.replace('\n', "")],
+    """.replace('\n', ""),
 
     # Eye Spot
-    ["""To control Eye spot on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
+    """To control Eye spot on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
      
      Chemical Control: Fungicides such as azoxystrobin, pyraclostrobin, and propiconazole are effective against eye spot. It is important to follow the label instructions carefully and apply fungicides when eye spot is first detected or when conditions are favorable for disease development.
      
@@ -421,10 +421,10 @@ corn_stressSoln = [
      Cultural Control: Cultural control involves using practices that make the environment less favorable for corn borers. Some strategies include planting a non-host crop, such as soybeans, in between corn crops can reduce eye spot populations, planting corn varieties that are resistant to eye spot can reduce the need for chemical or biological control, and plowing or disking the soil can help bury infected corn debris and reduce the risk of eye spot infections.
 
 
-    """.replace('\n', "")],
+    """.replace('\n', ""),
 
     # White Flies
-    ["""To control White Flies on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
+    """To control White Flies on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
      
      Chemical Control: Insecticides such as pyrethroids, neonicotinoids, and organophosphates are effective against whiteflies. It is important to follow the label instructions carefully and apply insecticides when whitefly populations are in their most susceptible stages.
      
@@ -432,17 +432,17 @@ corn_stressSoln = [
      
      Cultural Control: Cultural control involves using practices that make the environment less favorable for whiteflies. Some strategies include Removing infected plant material wherein whiteflies can reproduce on infected plant material, so it is important to remove infected plants as soon as possible. Using reflective mulch can make it more difficult for whiteflies to locate plants to infest, planting flowers or other plants that attract beneficial insects can help reduce whitefly populations, and using row covers can physically exclude whiteflies from corn plants.
 
-    """.replace('\n', "")],
+    """.replace('\n', ""),
 
     # Corn borer midrib feeding
-    [""" To control Corn borer midrib feeding on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
+    """ To control Corn borer midrib feeding on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
      
      Chemical Control: There are several insecticides that are effective against corn borer midrib feeding, including chlorpyrifos, bifenthrin, and cypermethrin. It is important to follow the label instructions carefully and apply insecticides when corn borer midrib feeding is in its most susceptible stage.
      
      Biological Control: One such natural enemy is the Trichogramma wasp, which lays its eggs in the eggs of corn borers, preventing them from hatching. Another natural enemy is the Bacillus thuringiensis (Bt) bacterium, which produces a toxin that is lethal to corn borers.
      
      Cultural Control: Cultural control involves using practices that make the environment less favorable for corn borer midrib feeding. Some strategies include plowing or disking the soil can disrupt corn borer midrib feeding overwintering sites and reduce populations, planting corn early or late in the season can reduce the risk of corn borer midrib feeding infestations, and choosing corn hybrids that have been bred for resistance to corn borer midrib feeding can reduce the need for chemical or biological control.
-    """.replace('\n', "")]
+    """.replace('\n', "")
 
 ]
 
@@ -474,7 +474,7 @@ tomato_stressDesc = [
 
 tomato_stressSoln = [
     #Powdery Mildew
-    ["""To control Powdery Mildew on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
+    """To control Powdery Mildew on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
      
     Chemical control: There are several fungicides available that can control powdery mildew on tomato plants, including copper fungicides, sulfur fungicides, and fungicides containing potassium bicarbonate or neem oil. 
     Follow the instructions on the fungicide label carefully, as overuse or misuse can lead to plant damage or residue on the tomatoes. Avoid applying fungicides during the hottest part of the day or when the plants are water-stressed.
@@ -484,32 +484,32 @@ tomato_stressSoln = [
     
     Cultural control: Planting resistant tomato varieties that are less susceptible to powdery mildew. Providing proper air circulation by spacing plants adequately and removing any plant debris or weeds that can harbor the fungus. 
     Watering the plants in the morning and avoiding overhead watering, which can promote fungal growth. Fertilizing the plants properly, as excessive nitrogen can increase susceptibility to powdery mildew. Using reflective mulches or coatings, such as kaolin clay, which can reduce the incidence of powdery mildew by reflecting sunlight and reducing leaf surface temperatures."""
-    .replace('\n', "")],
+    .replace('\n', ""),
     
     #Black mold
-    ["""To control Black Mold on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
+    """To control Black Mold on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
     Chemical control: There are several fungicides available that can control black mold on tomato plants, including copper fungicides, sulfur fungicides, and fungicides containing triadimefon or myclobutanil. Follow the instructions on the fungicide label carefully, as overuse or misuse can lead to plant damage or residue on the tomatoes. Avoid applying fungicides during the hottest part of the day or when the plants are water-stressed.
      
     Biological control: One effective method is to apply a biofungicide containing Bacillus subtilis, a beneficial bacterium that can prevent black mold from spreading. Another option is to use predatory mites, such as Phytoseiulus persimilis or Neoseiulus californicus, which feed on black mold and other plant pests.
      
     Cultural control: Reducing insect infestations, as insects such as aphids and whiteflies secrete a sticky substance called honeydew, which can promote the growth of black mold. Washing off the honeydew and black mold with a strong stream of water. Pruning infected branches or leaves and disposing of them in the trash. Using reflective mulches or coatings, such as kaolin clay, which can reduce the incidence of black mold by reflecting sunlight and reducing leaf surface temperatures.
-    """.replace('\n', "")],
+    """.replace('\n', ""),
     
     #fusarium
-    ["""To control Fusarium Wilt on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
+    """To control Fusarium Wilt on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
     Chemical control: There are no chemicals available to cure fusarium wilt, but some fungicides can help reduce the severity of the disease. Fungicides containing chlorothalonil, mancozeb, or copper can help protect plants from fungal infections. Follow the instructions on the fungicide label carefully, as overuse or misuse can lead to plant damage or residue on the tomatoes.
      
     Biological control: One effective method is to use soil-borne beneficial microorganisms, such as Trichoderma spp. or Bacillus subtilis, which can suppress the growth of the fungus that causes fusarium wilt. Another option is to use soil solarization, a process that involves covering the soil with plastic to trap heat and kill the fungus.
      
     Cultural control: Planting resistant tomato varieties that are less susceptible to fusarium wilt. Rotating crops, as the fungus can survive in the soil for several years and infect future tomato crops. Removing and destroying infected plants and any plant debris that can harbor the fungus. Avoiding overwatering and watering at the base of the plants rather than overhead watering, which can promote fungal growth. Using sterilized soil or soilless growing media to start seedlings. Applying organic matter, such as compost, to the soil to promote a healthy microbial community.
-    """.replace('\n', "")],
+    """.replace('\n', ""),
     
     #leaf miner
-    ["""To control Leaf Miner on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
+    """To control Leaf Miner on corns, there are several methods that can be used, including chemical control, biological control, and cultural control.
     Chemical control: There are several insecticides available that can control leaf miners on tomato plants, including spinosad, abamectin, and cyromazine. Follow the instructions on the insecticide label carefully, as overuse or misuse can lead to plant damage or residue on the tomatoes. Avoid applying insecticides during the hottest part of the day or when the plants are water-stressed.
      
     Biological control: Biological control involves the use of natural enemies to control leaf miners. One effective method is to release parasitic wasps, such as Diglyphus spp. or Chrysocharis spp., which lay their eggs in the leaf miner larvae, killing them. Another option is to use predatory mites, such as Phytoseiulus persimilis or Neoseiulus californicus, which feed on leaf miners and other plant pests.
      
     Cultural control: Removing and destroying any infected leaves or plant debris that can harbor the insects. Using reflective mulches or coatings, such as aluminum foil or silver plastic, which can confuse the leaf miners and reduce their attraction to the plants. Using yellow sticky traps, which can attract and trap adult leaf miner flies. Planting resistant tomato varieties that are less susceptible to leaf miners.
-    """.replace('\n', "")]
+    """.replace('\n', "")
 ]

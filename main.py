@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from fastapi.responses import FileResponse
 from Crop import Crop
 import reco
+import pandas as pd
 
 app = FastAPI()
 
@@ -81,6 +83,14 @@ for i in range(len(reco.tomato_stressSoln)):
     reco.tomato_stressSoln[i] = temp_list
 tomato_data = Crop("Tomato", "Solanum lycopersicum", reco.tomato_stress, reco.tomato_stressDesc, reco.tomato_stressSoln)
 
+# Get Plant Data
+plant_details_df = pd.read_csv(f"csv/plant_details.csv", header=0, names=None)
+plant_details = plant_details_df.to_dict(orient="records")
+
+# Get Stress Data
+stress_details_df = pd.read_csv(f"csv/stress_details.csv", header=0, names=None)
+stress_details = stress_details_df.to_dict(orient="records")
+
 class Msg(BaseModel):
     msg: str
 
@@ -111,28 +121,44 @@ async def get_All():
         to_return.append({"id": i, "stress": tomato_data.stress_dict[i]})
     return to_return
 
+@app.get("/image/{image_of}")
+async def get_All(image_of: str):
+    to_open_image = "images/" + image_of + ".jpeg"
+    return FileResponse(to_open_image, media_type="image/jpeg")
+    
+
+@app.get("/plant/{crop}")
+async def get_All(crop: str):
+    crop = crop.lower()
+    to_return = [d for d in plant_details if d.get("crop") == crop]
+    return to_return
+
+
 
 @app.get("/{crop}")
 async def get_Crop(crop: str):
     to_return = []
-    if crop == "Onion":
-        for i in range(len(onion_data.stress_dict)):
-            to_return.append({"id": i, "stress": onion_data.stress_dict[i]})
-        return to_return
-    elif crop == "Corn":
-        for i in range(len(corn_data.stress_dict)):
-            to_return.append({"id": i, "stress": corn_data.stress_dict[i]})
-        return to_return
-    elif crop == "Eggplant":
-        for i in range(len(eggplant_data.stress_dict)):
-            to_return.append({"id": i, "stress": eggplant_data.stress_dict[i]})
-        return to_return
-    elif crop == "Tomato":
-        for i in range(len(tomato_data.stress_dict)):
-            to_return.append({"id": i, "stress": tomato_data.stress_dict[i]})
-        return to_return
-    else:
-        return {"message": f"{crop} no on the list"}
+    crop = crop.capitalize()
+    to_return = [d for d in stress_details if d.get("Crop") == crop]
+    return to_return
+    # if crop == "onion":
+    #     for i in range(len(onion_data.stress_dict)):
+    #         to_return.append({"id": i, "stress": onion_data.stress_dict[i]})
+    #     return to_return
+    # elif crop == "corn":
+    #     for i in range(len(corn_data.stress_dict)):
+    #         to_return.append({"id": i, "stress": corn_data.stress_dict[i]})
+    #     return to_return
+    # elif crop == "Eggplant":
+    #     for i in range(len(eggplant_data.stress_dict)):
+    #         to_return.append({"id": i, "stress": eggplant_data.stress_dict[i]})
+    #     return to_return
+    # elif crop == "Tomato":
+    #     for i in range(len(tomato_data.stress_dict)):
+    #         to_return.append({"id": i, "stress": tomato_data.stress_dict[i]})
+    #     return to_return
+    # else:
+    #     return {"message": f"{crop} no on the list"}
         
 
 @app.get("/Onion/{stress}")
