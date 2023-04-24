@@ -118,9 +118,11 @@ async def get_All():
 async def get_Image(image_of: str):
     try:
         to_open_image = "images/" + image_of + ".jpg"
-    except FileNotFoundError or RuntimeError:
+        return FileResponse(to_open_image, media_type="image/jpeg")
+    except:
         to_open_image = "images/no_image.jpeg"
-    return FileResponse(to_open_image, media_type="image/jpeg")
+        return FileResponse(to_open_image, media_type="image/jpeg")
+    
     
 
 @app.get("/plant/{crop}")
