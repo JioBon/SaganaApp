@@ -115,13 +115,16 @@ async def get_All():
     return to_return
 
 @app.get("/image/{image_of}")
-async def get_All(image_of: str):
-    to_open_image = "images/" + image_of + ".jpeg"
+async def get_Image(image_of: str):
+    try:
+        to_open_image = "images/" + image_of + ".jpeg"
+    except Exception:
+        to_open_image = "images/no_image.jpeg"
     return FileResponse(to_open_image, media_type="image/jpeg")
     
 
 @app.get("/plant/{crop}")
-async def get_All(crop: str):
+async def get_Crop_Info(crop: str):
     crop = crop.lower()
     to_return = [d for d in plant_details if d.get("crop") == crop]
     return to_return
