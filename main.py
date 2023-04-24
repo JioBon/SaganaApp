@@ -121,7 +121,7 @@ async def get_Image(image_of: str):
     if os.path.exists(to_open_image):
         return FileResponse(to_open_image, media_type="image/jpg")
     else:
-        to_open_image = "images/no_image.jpeg"
+        to_open_image = "images/no_image.jpg"
         return FileResponse(to_open_image, media_type="image/jpg")
     
     
