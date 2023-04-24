@@ -89,6 +89,7 @@ plant_details = plant_details_df.to_dict(orient="records")
 
 # Get Stress Data
 stress_details_df = pd.read_csv(f"csv/stress_details.csv", header=0, names=None, encoding='windows-1254')
+stress_details_df = stress_details_df.fillna('')
 stress_details = stress_details_df.to_dict(orient="records")
 
 class Msg(BaseModel):
