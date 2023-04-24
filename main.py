@@ -4,6 +4,7 @@ from fastapi.responses import FileResponse
 from Crop import Crop
 import reco
 import pandas as pd
+import os
 
 app = FastAPI()
 
@@ -116,12 +117,12 @@ async def get_All():
 
 @app.get("/image/{image_of}")
 async def get_Image(image_of: str):
-    try:
-        to_open_image = "images/" + image_of + ".jpg"
-        return FileResponse(to_open_image, media_type="image/jpeg")
-    except:
+    to_open_image = "images/" + image_of + ".jpg"
+    if os.path.exists(to_open_image):
+        return FileResponse(to_open_image, media_type="image/jpg")
+    else:
         to_open_image = "images/no_image.jpeg"
-        return FileResponse(to_open_image, media_type="image/jpeg")
+        return FileResponse(to_open_image, media_type="image/jpg")
     
     
 
