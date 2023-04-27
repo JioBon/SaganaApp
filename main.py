@@ -124,6 +124,15 @@ async def get_Image(image_of: str):
         to_open_image = "images/no_image.jpg"
         return FileResponse(to_open_image, media_type="image/jpg")
     
+@app.get("/plant/image/{image_of}")
+async def get_plant_image(image_of: str):
+    to_open_image = "plantimage/" + image_of + ".jpg"
+    if os.path.exists(to_open_image):
+        return FileResponse(to_open_image, media_type="image/jpg")
+    else:
+        to_open_image = "plantimage/no_image.jpg"
+        return FileResponse(to_open_image, media_type="image/jpg")
+    
     
 
 @app.get("/plant/{crop}")
