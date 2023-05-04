@@ -5,8 +5,73 @@ from Crop import Crop
 import reco
 import pandas as pd
 import os
+import sqlite3
 
 app = FastAPI()
+
+@app.post("/User_data/")
+async def User_Data(First_name: str, Last_name: str, Username: str, Password: str, ):
+    conn=sqlite3.connect("Userdatabase.db")
+    cursor=conn.cursor()
+    cursor.execute("INSERT INTO users (Username, First_name, Last_name, Password) VALUES (?,?,?,?)", 
+    (Username,First_name,Last_name,Password))
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+@app.get("/select_from_database/")
+async def get_user_specificuser(Username: str):
+    conn=sqlite3.connect("Userdatabase.db")
+    cursor=conn.cursor()
+    cursor.execute("SELECT * FROM users WHERE Username = ?",(Username,))
+    result=cursor.fetchone()
+    my_dict = {}
+    my_dict["Username"]=result[0]
+    my_dict["First_name"]=result[1]
+    my_dict["Last_name"]=result[2]
+    my_dict["Password"]=result[3]
+    my_dict["Contact_no"]=result[4]
+    my_dict["Profile_pict"]=result[5]
+    cursor.close()
+    conn.close()
+    return my_dict
+
+@app.put("/Update_User/")
+async def update_user(Username: str, First_name:str, Last_name:str, Password:str):
+    conn=sqlite3.connect("Userdatabase.db")
+    cursor=conn.cursor()
+    cursor.execute("UPDATE users SET First_name = ?, Last_name = ?, Password = ?  WHERE Username = ?", 
+    (First_name,Last_name,Password,Username))
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+# @app.post("/signin/")
+# async def check_user(First_name: str, Last_name: str, Username: str, Password: str,):
+#     conn=sqlite3.connect("Userdatabase.db")
+#     cursor=conn.cursor()
+#     cursor.execute("SELECT * FROM users WHERE First_name = ?, Last_name = ?, Password = ?, Username = ? ",(First_name,Last_name,Password,Username))
+#     result.cursor.fetchone()
+#     if result:
+#         return print("Signed in") 
+#     conn.close()
+#     cursor.close()
+
+# @app.get("/dictionary/")
+# async def Dictiory():
+#     conn=sqlite3.connect("Userdatabase.db")
+#     cursor=conn.cursor()
+#     cursor.execute("SELECT * FROM users")
+#     data = cursor.fetchone()
+#     my_dict = {}
+#     my_dict["Username"]=data[0]
+#     my_dict["First_name"]=data[1]
+#     my_dict["Last_name"]=data[2]
+#     my_dict["Password"]=data[3]
+#     cursor.close()
+#     conn.close()
+#     return my_dict
+
 
 # Onion
 onion_stress = ["Botrytis leaf blight", "Downy Mildew", "Armyworm", "Leaf Miners"]
@@ -53,6 +118,8 @@ onion_stressSoln = [
     Be sure you get it on the bottom side of the leaf.
     """.replace('\n', "")]
 ]
+
+
 for i in range(len(onion_stressSoln)):
     temp_list = []
     for j in range(len(onion_stressSoln[i])):
