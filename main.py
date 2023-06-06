@@ -152,7 +152,7 @@ async def User_Data(First_name: str, Last_name: str, Username: str, Password: st
     cursor.close()
     conn.close()
 
-@app.get("/select_from_database/")
+@app.get("/select_from_database/{Username}")
 async def get_user_specificuser(Username: str):
     conn=sqlite3.connect("Userdatabase.db")
     cursor=conn.cursor()
