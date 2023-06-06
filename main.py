@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 from pydantic import BaseModel
 from fastapi.responses import FileResponse
 from Crop import Crop
@@ -143,7 +143,7 @@ async def root():
     return to_return
 
 @app.post("/User_data/")
-async def User_Data(First_name: str, Last_name: str, Username: str, Password: str, ):
+async def User_Data(First_name: str = Query(...), Last_name: str = Query(...), Username: str = Query(...), Password: str = Query(...)):
     conn=sqlite3.connect("Userdatabase.db")
     cursor=conn.cursor()
     cursor.execute("INSERT INTO users (Username, First_name, Last_name, Password) VALUES (?,?,?,?)", 
