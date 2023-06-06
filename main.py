@@ -187,11 +187,6 @@ async def get_All():
 @app.get("/image/{image_of}")
 async def get_Image(image_of: str):
     to_open_image = "images/" + image_of + ".jpg"
-    contents = os.listdir("images")
-
-# Print each item in the folder
-    for item in contents:
-        print(item)
     if os.path.exists(to_open_image):
         return FileResponse(to_open_image, media_type="image/jpg")
     else:
