@@ -187,7 +187,7 @@ async def get_All():
 @app.get("/image/{image_of}")
 async def get_Image(image_of: str):
     to_open_image = "images/" + image_of + ".jpg"
-    print('to_open_image')
+    print(to_open_image)
     if os.path.exists(to_open_image):
         return FileResponse(to_open_image, media_type="image/jpg")
     else:
