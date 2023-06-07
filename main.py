@@ -239,6 +239,30 @@ async def add_history(username: str = Form(...),
     cursor.close()
     conn.close()
 
+@app.put("/deleteuserhistory")
+async def delete_user_history(username: str = Query(...)):
+    conn = sqlite3.connect("Userdatabase.db")
+    cursor = conn.cursor()
+
+    delete_query = "DELETE FROM history WHERE user = ?"
+    cursor.execute(delete_query, (username,))
+
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+@app.put("/deletehistory")
+async def delete_history(id: int = Query(...)):
+    conn = sqlite3.connect("Userdatabase.db")
+    cursor = conn.cursor()
+
+    delete_query = "DELETE FROM history WHERE id = ?"
+    cursor.execute(delete_query, (id,))
+
+    conn.commit()
+    cursor.close()
+    conn.close()
+
 @app.get("/allStress")
 async def get_All():
     to_return = [d for d in stress_details]
