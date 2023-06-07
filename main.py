@@ -180,7 +180,7 @@ async def update_user(Username: str, First_name:str, Last_name:str, Password:str
     cursor.close()
     conn.close()
 
-@app.put("/history/{Username}")
+@app.get("/history/{Username}")
 async def filter_history(Username: str):
     conn=sqlite3.connect("Userdatabase.db")
     cursor=conn.cursor()
