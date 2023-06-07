@@ -206,7 +206,23 @@ async def filter_history(Username: str):
     
     cursor.close()
     conn.close()
-    return to_return
+    if not to_return:
+        return [{
+            'id': 9999,
+            'username': Username,
+            'image': bytearray(),
+            'crop': 'No Data',
+            'stress': 'No Data',
+            'confidence': 0,
+            'x1': 0,
+            'y1': 0,
+            'x2': 0,
+            'y2': 0,
+            'date': 0,
+            'time': 0
+        }]
+    else:
+        return to_return
 
 @app.put("/addhistory")
 async def add_history(username: str = Form(...),
