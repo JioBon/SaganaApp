@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query, UploadFile, File, Form
 from pydantic import BaseModel
 from fastapi.responses import FileResponse
 from Crop import Crop
@@ -6,6 +6,7 @@ import reco
 import pandas as pd
 import os
 import sqlite3
+import base64
 
 app = FastAPI()
 
@@ -176,6 +177,65 @@ async def update_user(Username: str, First_name:str, Last_name:str, Password:str
     cursor.execute("UPDATE users SET First_name = ?, Last_name = ?, Password = ?  WHERE Username = ?", 
     (First_name,Last_name,Password,Username))
     conn.commit()
+    cursor.close()
+    conn.close()
+
+@app.put("/history/{Username}")
+async def filter_history(Username: str):
+    conn=sqlite3.connect("Userdatabase.db")
+    cursor=conn.cursor()
+    cursor.execute("SELECT * FROM history WHERE user = ?",(Username,))
+    result=cursor.fetchall()
+    to_return = []
+    for row in result:
+        row_dict = {
+            'id': row[0],
+            'username': row[1],
+            'image': base64.b64encode(row[2]).decode('utf-8'),
+            'crop': row[3],
+            'stress': row[4],
+            'confidence': row[5],
+            'x1': row[6],
+            'y1': row[7],
+            'x2': row[8],
+            'y2': row[9],
+            'date': row[10],
+            'time': row[11]
+        }
+        to_return.append(row_dict)
+    
+    cursor.close()
+    conn.close()
+    return to_return
+
+@app.put("/addhistory")
+async def add_history(username: str = Form(...),
+                      image: UploadFile = File(...),
+                      crop: str = Form(...),
+                      stress: str = Form(...),
+                      confidence: float = Form(...),
+                      x1: int = Form(...),
+                      y1: int = Form(...),
+                      x2: int = Form(...),
+                      y2: int = Form(...),
+                      date: str = Form(...),
+                      time: str = Form(...)):
+    image_data = await image.read()
+    byte_array = bytearray(image_data)
+    
+    data = (username, image_data, crop, stress, confidence, x1, y1, x2, y2, date, time)
+
+    conn=sqlite3.connect("Userdatabase.db")
+    cursor=conn.cursor()
+
+    insert_query = '''
+        INSERT INTO history (user, image, crop, stress, confidence, x1, y1, x2, y2, date, time)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        '''
+    cursor.execute(insert_query, data)
+
+    conn.commit()
+
     cursor.close()
     conn.close()
 
