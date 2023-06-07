@@ -224,7 +224,7 @@ async def filter_history(Username: str):
     else:
         return to_return
 
-@app.put("/addhistory")
+@app.post("/addhistory")
 async def add_history(username: str = Form(...),
                       image: UploadFile = File(...),
                       crop: str = Form(...),
@@ -255,7 +255,7 @@ async def add_history(username: str = Form(...),
     cursor.close()
     conn.close()
 
-@app.put("/deleteuserhistory")
+@app.post("/deleteuserhistory")
 async def delete_user_history(username: str = Query(...)):
     conn = sqlite3.connect("Userdatabase.db")
     cursor = conn.cursor()
@@ -267,7 +267,7 @@ async def delete_user_history(username: str = Query(...)):
     cursor.close()
     conn.close()
 
-@app.put("/deletehistory")
+@app.post("/deletehistory")
 async def delete_history(id: int = Query(...)):
     conn = sqlite3.connect("Userdatabase.db")
     cursor = conn.cursor()
