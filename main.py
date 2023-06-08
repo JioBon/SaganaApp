@@ -290,7 +290,8 @@ async def delete_history(id: int = Query(...)):
 @app.get("/allStress")
 async def get_All():
     to_return = [d for d in stress_details]
-    return to_return
+    print(stress_details)
+    return stress_details
 
 @app.get("/image/{image_of}")
 async def get_Image(image_of: str):
