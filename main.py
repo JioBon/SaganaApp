@@ -157,7 +157,7 @@ async def User_Data(First_name: str = Query(...), Last_name: str = Query(...), U
     else:
         cursor.close()
         conn.close()
-        raise HTTPException(status_code=404, detail="User is already taken.")
+        raise HTTPException(status_code=404, detail="User already exist. Please Try different Username")
     cursor.close()
     conn.close()
 
