@@ -147,16 +147,19 @@ async def root():
 async def User_Data(First_name: str = Query(...), Last_name: str = Query(...), Username: str = Query(...), Password: str = Query(...)):
     conn=sqlite3.connect("Userdatabase.db")
     cursor=conn.cursor()
-    cursor.execute(("SELECT * FROM users WHERE Username = ?", (Username)))
-    result = cursor.fetchall()
-    if result == null:
-        cursor.execute("INSERT INTO users (Username, First_name, Last_name, Password) VALUES (?,?,?,?)", 
-        (Username,First_name,Last_name,Password))
-        conn.commit()
-    else:
-        cursor.close()
-        conn.close()
-        raise HTTPException(status_code=404, detail="User is already taken.")
+    # cursor.execute("SELECT * FROM users WHERE Username = ?", (Username))
+    # result = cursor.fetchall()
+    # if result == null:
+    #     cursor.execute("INSERT INTO users (Username, First_name, Last_name, Password) VALUES (?,?,?,?)", 
+    #     (Username,First_name,Last_name,Password))
+    #     conn.commit()
+    # else:
+    #     cursor.close()
+    #     conn.close()
+    #     raise HTTPException(status_code=404, detail="User is already taken.")
+    cursor.execute("INSERT INTO users (Username, First_name, Last_name, Password) VALUES (?,?,?,?)", 
+    (Username,First_name,Last_name,Password))
+    conn.commit()
     cursor.close()
     conn.close()
 
