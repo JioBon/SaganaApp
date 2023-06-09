@@ -179,11 +179,11 @@ async def get_user_specificuser(Username: str):
     return my_dict
 
 @app.put("/Update_User/")
-async def update_user(Username: str, First_name:str, Last_name:str, Password:str):
+async def update_user(Username: str, First_name:str, Last_name:str, Password:str, Contact_no:str):
     conn=sqlite3.connect("Userdatabase.db")
     cursor=conn.cursor()
-    cursor.execute("UPDATE users SET First_name = ?, Last_name = ?, Password = ?  WHERE Username = ?", 
-    (First_name,Last_name,Password,Username))
+    cursor.execute("UPDATE users SET First_name = ?, Last_name = ?, Password = ?, Contact_no = ?  WHERE Username = ?", 
+    (First_name,Last_name,Password,Contact_no,Username))
     conn.commit()
     cursor.close()
     conn.close()
@@ -290,7 +290,6 @@ async def delete_history(id: int = Query(...)):
 @app.get("/allStress")
 async def get_All():
     to_return = [d for d in stress_details]
-    print(stress_details)
     return stress_details
 
 @app.get("/image/{image_of}")
