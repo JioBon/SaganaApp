@@ -7,6 +7,7 @@ import pandas as pd
 import os
 import sqlite3
 import base64
+from typing import Optional
 
 app = FastAPI()
 
@@ -179,12 +180,17 @@ async def get_user_specificuser(Username: str):
     return my_dict
 
 @app.put("/Update_User/")
-async def update_user(Username: str, First_name:str, Last_name:str, Password:str, Contact_no:str):
+async def update_user(Username: str, First_name:str, Last_name:str, Password:str, Contact_no:Optional[str] = None):
     conn=sqlite3.connect("Userdatabase.db")
     cursor=conn.cursor()
-    cursor.execute("UPDATE users SET First_name = ?, Last_name = ?, Password = ?, Contact_no = ?  WHERE Username = ?", 
-    (First_name,Last_name,Password,Contact_no,Username))
-    conn.commit()
+    if Contact_no is None:
+        cursor.execute("UPDATE users SET First_name = ?, Last_name = ?, Password = ? WHERE Username = ?", 
+        (First_name,Last_name,Password,Username))
+        conn.commit()
+    else:
+        cursor.execute("UPDATE users SET First_name = ?, Last_name = ?, Password = ?, Contact_no = ?  WHERE Username = ?", 
+        (First_name,Last_name,Password,Contact_no,Username))
+        conn.commit()
     cursor.close()
     conn.close()
 
