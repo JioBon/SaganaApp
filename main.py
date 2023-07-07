@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Query, UploadFile, File, Form
+from fastapi import FastAPI, Query, UploadFile, File, Form, HTTPException
 from pydantic import BaseModel
 from fastapi.responses import FileResponse
 from Crop import Crop
@@ -7,6 +7,7 @@ import pandas as pd
 import os
 import sqlite3
 import base64
+from typing import Optional
 
 app = FastAPI()
 
@@ -147,9 +148,17 @@ async def root():
 async def User_Data(First_name: str = Query(...), Last_name: str = Query(...), Username: str = Query(...), Password: str = Query(...)):
     conn=sqlite3.connect("Userdatabase.db")
     cursor=conn.cursor()
-    cursor.execute("INSERT INTO users (Username, First_name, Last_name, Password) VALUES (?,?,?,?)", 
-    (Username,First_name,Last_name,Password))
-    conn.commit()
+    cursor.execute("SELECT * FROM users WHERE Username = ?", (Username,))
+    result = cursor.fetchall()
+    print(result)
+    if not result:
+        cursor.execute("INSERT INTO users (Username, First_name, Last_name, Password) VALUES (?,?,?,?)", 
+        (Username,First_name,Last_name,Password))
+        conn.commit()
+    else:
+        cursor.close()
+        conn.close()
+        raise HTTPException(status_code=404, detail="User already exist. Please Try different Username")
     cursor.close()
     conn.close()
 
@@ -171,12 +180,17 @@ async def get_user_specificuser(Username: str):
     return my_dict
 
 @app.put("/Update_User/")
-async def update_user(Username: str, First_name:str, Last_name:str, Password:str):
+async def update_user(Username: str, First_name:str, Last_name:str, Password:str, Contact_no:Optional[str] = None):
     conn=sqlite3.connect("Userdatabase.db")
     cursor=conn.cursor()
-    cursor.execute("UPDATE users SET First_name = ?, Last_name = ?, Password = ?  WHERE Username = ?", 
-    (First_name,Last_name,Password,Username))
-    conn.commit()
+    if Contact_no is None:
+        cursor.execute("UPDATE users SET First_name = ?, Last_name = ?, Password = ? WHERE Username = ?", 
+        (First_name,Last_name,Password,Username))
+        conn.commit()
+    else:
+        cursor.execute("UPDATE users SET First_name = ?, Last_name = ?, Password = ?, Contact_no = ?  WHERE Username = ?", 
+        (First_name,Last_name,Password,Contact_no,Username))
+        conn.commit()
     cursor.close()
     conn.close()
 
@@ -282,7 +296,7 @@ async def delete_history(id: int = Query(...)):
 @app.get("/allStress")
 async def get_All():
     to_return = [d for d in stress_details]
-    return to_return
+    return stress_details
 
 @app.get("/image/{image_of}")
 async def get_Image(image_of: str):
