@@ -186,7 +186,8 @@ async def get_user_specificuser(Username: str):
 
 
 @app.put("/Update_User/")
-async def update_user(Username: str, First_name: str, Last_name: str, Password: str, Contact_no: Optional[str] = None):
+async def update_user(Username: str, First_name: str, Last_name: str,
+                      Password: str, Contact_no: Optional[str] = None):
     conn = sqlite3.connect("Userdatabase.db")
     cursor = conn.cursor()
     if Contact_no is None:
