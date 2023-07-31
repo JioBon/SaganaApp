@@ -12,7 +12,6 @@ from typing import Optional
 app = FastAPI()
 
 
-
 # @app.post("/signin/")
 # async def check_user(First_name: str, Last_name: str, Username: str, Password: str,):
 #     conn=sqlite3.connect("Userdatabase.db")
@@ -20,7 +19,7 @@ app = FastAPI()
 #     cursor.execute("SELECT * FROM users WHERE First_name = ?, Last_name = ?, Password = ?, Username = ? ",(First_name,Last_name,Password,Username))
 #     result.cursor.fetchone()
 #     if result:
-#         return print("Signed in") 
+#         return print("Signed in")
 #     conn.close()
 #     cursor.close()
 
@@ -42,17 +41,17 @@ app = FastAPI()
 
 # # Onion
 # onion_stress = ["Botrytis leaf blight", "Downy Mildew", "Armyworm", "Leaf Miners"]
-# onion_stressDesc = [ 
-#     """Botrytis leaf blight, sometimes also referred to as Botrytis leaf spot, occurs on onions. 
-#     White, sunken spots on leaves are usually the first sign of infection. Spots are small, oval-shaped, and range from 0.06 to 0.25 inch (0.5–6 mm) long. 
-#     They sometimes have a light-green halo and may appear water-soaked. The epidermis around the spots may be silvery. 
+# onion_stressDesc = [
+#     """Botrytis leaf blight, sometimes also referred to as Botrytis leaf spot, occurs on onions.
+#     White, sunken spots on leaves are usually the first sign of infection. Spots are small, oval-shaped, and range from 0.06 to 0.25 inch (0.5–6 mm) long.
+#     They sometimes have a light-green halo and may appear water-soaked. The epidermis around the spots may be silvery.
 #     When numerous spots are present, leaf tips die back, and whole leaves may eventually die.""".strip(),
 #     """
-#     At the field level, symptoms of downy mildew are first noticed as circular clumps of yellowed plants that are a few to many feet in diameter. 
+#     At the field level, symptoms of downy mildew are first noticed as circular clumps of yellowed plants that are a few to many feet in diameter.
 #     As the disease progresses, the yellowing patterns often enlarge in the direction of prevailing winds.
-#     On individual plants, leaf tissue becomes pale green, then tan to brown or yellow, and finally collapses. Lesions may exhibit a violet-to-purple color. 
-#     When leaves are wet, or when humidity is very high, signs of Peronospora destructor are visible on the surface of older leaves as fine, furry, grayish-white growths. 
-#     These growths may later turn purple or brown as a result of a secondary infection of the lesion by other fungi, 
+#     On individual plants, leaf tissue becomes pale green, then tan to brown or yellow, and finally collapses. Lesions may exhibit a violet-to-purple color.
+#     When leaves are wet, or when humidity is very high, signs of Peronospora destructor are visible on the surface of older leaves as fine, furry, grayish-white growths.
+#     These growths may later turn purple or brown as a result of a secondary infection of the lesion by other fungi,
 #     such as those that cause PURPLE BLOTCH AND STEMPYLIUM LEAF BLIGHT, as these fungi can produce purple pigmentation and dark spores.
 #     """.replace('\n', ""),
 #     """
@@ -69,19 +68,19 @@ app = FastAPI()
 # onion_stressSoln = [
 #     ["apply appropriate fungicide sprays".replace('\n', "")],
 #     ["""
-#     Spray at the first sign of the disease. After the first spray, scout fields and make subsequent applications when weather conditions are favorable for the disease. 
-#     Rotate with fungicides from different mode-of-action groups to reduce the risk of fungicide resistance development. 
-#     Fungicides may be applied on a 7-day schedule (only as consistent with the label), if necessary. 
-#     For all fungicides, thorough coverage of foliage is important in the control of downy mildew. 
-#     apply appropriate foliar fungicides taking care to apply thoroughly to waxy leaves. 
+#     Spray at the first sign of the disease. After the first spray, scout fields and make subsequent applications when weather conditions are favorable for the disease.
+#     Rotate with fungicides from different mode-of-action groups to reduce the risk of fungicide resistance development.
+#     Fungicides may be applied on a 7-day schedule (only as consistent with the label), if necessary.
+#     For all fungicides, thorough coverage of foliage is important in the control of downy mildew.
+#     apply appropriate foliar fungicides taking care to apply thoroughly to waxy leaves.
 #     Chlorothalonil and mancozeb are the main protectant fungicides for downy mildew.
 #     """.replace('\n', "")],
 #     ["".replace('\n', "")],
 #     ["""
-#     Pyrethrin This organic pesticide will kill leaf miners as they leave the egg and enter the leaf. 
-#     Since they have to chew into the leaf, they ingest the poison with the leaf and die. 
-#     However, pyrethrin also kills good insects such as bee and leaf miner preditors. 
-#     Use to spot treat concentrations of leaf miners rather than blanket the whole garden with it. 
+#     Pyrethrin This organic pesticide will kill leaf miners as they leave the egg and enter the leaf.
+#     Since they have to chew into the leaf, they ingest the poison with the leaf and die.
+#     However, pyrethrin also kills good insects such as bee and leaf miner preditors.
+#     Use to spot treat concentrations of leaf miners rather than blanket the whole garden with it.
 #     Be sure you get it on the bottom side of the leaf.
 #     """.replace('\n', "")]
 # ]
@@ -119,13 +118,16 @@ app = FastAPI()
 # tomato_data = Crop("Tomato", "Solanum lycopersicum", reco.tomato_stress, reco.tomato_stressDesc, reco.tomato_stressSoln)
 
 # Get Plant Data
-plant_details_df = pd.read_csv(f"csv/plant_details.csv", header=0, names=None, encoding="utf8")
+plant_details_df = pd.read_csv(
+    f"csv/plant_details.csv", header=0, names=None, encoding="utf8")
 plant_details = plant_details_df.to_dict(orient="records")
 
 # Get Stress Data
-stress_details_df = pd.read_csv(f"csv/stress_details.csv", header=0, names=None, encoding='windows-1254')
+stress_details_df = pd.read_csv(
+    f"csv/stress_details.csv", header=0, names=None, encoding='windows-1254')
 stress_details_df = stress_details_df.fillna('')
 stress_details = stress_details_df.to_dict(orient="records")
+
 
 class Msg(BaseModel):
     msg: str
@@ -144,62 +146,68 @@ async def root():
         to_return.append({"id": i, "stress": tomato_data.stress_dict[i]})
     return to_return
 
+
 @app.post("/User_data/")
 async def User_Data(First_name: str = Query(...), Last_name: str = Query(...), Username: str = Query(...), Password: str = Query(...)):
-    conn=sqlite3.connect("Userdatabase.db")
-    cursor=conn.cursor()
+    conn = sqlite3.connect("Userdatabase.db")
+    cursor = conn.cursor()
     cursor.execute("SELECT * FROM users WHERE Username = ?", (Username,))
     result = cursor.fetchall()
     print(result)
     if not result:
-        cursor.execute("INSERT INTO users (Username, First_name, Last_name, Password) VALUES (?,?,?,?)", 
-        (Username,First_name,Last_name,Password))
+        cursor.execute("INSERT INTO users (Username, First_name, Last_name, Password) VALUES (?,?,?,?)",
+                       (Username, First_name, Last_name, Password))
         conn.commit()
     else:
         cursor.close()
         conn.close()
-        raise HTTPException(status_code=404, detail="User already exist. Please Try different Username")
+        raise HTTPException(
+            status_code=404, detail="User already exist. Please Try different Username")
     cursor.close()
     conn.close()
 
+
 @app.get("/select_from_database/{Username}")
 async def get_user_specificuser(Username: str):
-    conn=sqlite3.connect("Userdatabase.db")
-    cursor=conn.cursor()
-    cursor.execute("SELECT * FROM users WHERE Username = ?",(Username,))
-    result=cursor.fetchone()
+    conn = sqlite3.connect("Userdatabase.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users WHERE Username = ?", (Username,))
+    result = cursor.fetchone()
     my_dict = {}
-    my_dict["Username"]=result[0]
-    my_dict["First_name"]=result[1]
-    my_dict["Last_name"]=result[2]
-    my_dict["Password"]=result[3]
-    my_dict["Contact_no"]=result[4]
-    my_dict["Profile_pict"]=result[5]
+    my_dict["Username"] = result[0]
+    my_dict["First_name"] = result[1]
+    my_dict["Last_name"] = result[2]
+    my_dict["Password"] = result[3]
+    my_dict["Contact_no"] = result[4]
+    my_dict["Profile_pict"] = result[5]
     cursor.close()
     conn.close()
     return my_dict
 
+
 @app.put("/Update_User/")
-async def update_user(Username: str, First_name:str, Last_name:str, Password:str, Contact_no:Optional[str] = None):
-    conn=sqlite3.connect("Userdatabase.db")
-    cursor=conn.cursor()
+async def update_user(Username: str, First_name: str, Last_name: str,
+                      Password: str, Contact_no: Optional[str] = None):
+    conn = sqlite3.connect("Userdatabase.db")
+    cursor = conn.cursor()
     if Contact_no is None:
-        cursor.execute("UPDATE users SET First_name = ?, Last_name = ?, Password = ? WHERE Username = ?", 
-        (First_name,Last_name,Password,Username))
+        cursor.execute("UPDATE users SET First_name = ?, Last_name = ?, Password = ? WHERE Username = ?",
+                       (First_name, Last_name, Password, Username))
         conn.commit()
     else:
-        cursor.execute("UPDATE users SET First_name = ?, Last_name = ?, Password = ?, Contact_no = ?  WHERE Username = ?", 
-        (First_name,Last_name,Password,Contact_no,Username))
+        cursor.execute("UPDATE users SET First_name = ?, Last_name = ?, Password = ?, Contact_no = ?  WHERE Username = ?",
+                       (First_name, Last_name, Password, Contact_no, Username))
         conn.commit()
     cursor.close()
     conn.close()
 
+
 @app.get("/history/{Username}")
 async def filter_history(Username: str):
-    conn=sqlite3.connect("Userdatabase.db")
-    cursor=conn.cursor()
-    cursor.execute("SELECT * FROM history WHERE user = ?",(Username,))
-    result=cursor.fetchall()
+    conn = sqlite3.connect("Userdatabase.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM history WHERE user = ?", (Username,))
+    result = cursor.fetchall()
     to_return = []
     for row in result:
         row_dict = {
@@ -217,7 +225,7 @@ async def filter_history(Username: str):
             'time': row[11]
         }
         to_return.append(row_dict)
-    
+
     cursor.close()
     conn.close()
     if not to_return:
@@ -238,6 +246,7 @@ async def filter_history(Username: str):
     else:
         return to_return
 
+
 @app.post("/addhistory")
 async def add_history(username: str = Form(...),
                       image: UploadFile = File(...),
@@ -252,11 +261,12 @@ async def add_history(username: str = Form(...),
                       time: str = Form(...)):
     image_data = await image.read()
     byte_array = bytearray(image_data)
-    
-    data = (username, image_data, crop, stress, confidence, x1, y1, x2, y2, date, time)
 
-    conn=sqlite3.connect("Userdatabase.db")
-    cursor=conn.cursor()
+    data = (username, image_data, crop, stress,
+            confidence, x1, y1, x2, y2, date, time)
+
+    conn = sqlite3.connect("Userdatabase.db")
+    cursor = conn.cursor()
 
     insert_query = '''
         INSERT INTO history (user, image, crop, stress, confidence, x1, y1, x2, y2, date, time)
@@ -268,6 +278,7 @@ async def add_history(username: str = Form(...),
 
     cursor.close()
     conn.close()
+
 
 @app.post("/deleteuserhistory")
 async def delete_user_history(username: str = Query(...)):
@@ -281,6 +292,7 @@ async def delete_user_history(username: str = Query(...)):
     cursor.close()
     conn.close()
 
+
 @app.post("/deletehistory")
 async def delete_history(id: int = Query(...)):
     conn = sqlite3.connect("Userdatabase.db")
@@ -293,10 +305,12 @@ async def delete_history(id: int = Query(...)):
     cursor.close()
     conn.close()
 
+
 @app.get("/allStress")
 async def get_All():
     to_return = [d for d in stress_details]
     return stress_details
+
 
 @app.get("/image/{image_of}")
 async def get_Image(image_of: str):
@@ -306,7 +320,8 @@ async def get_Image(image_of: str):
     else:
         to_open_image = "images/no_image.jpg"
         return FileResponse(to_open_image, media_type="image/jpg")
-    
+
+
 @app.get("/plant/image/{image_of}")
 async def get_plant_image(image_of: str):
     to_open_image = "plantimage/" + image_of + ".jpg"
@@ -315,15 +330,13 @@ async def get_plant_image(image_of: str):
     else:
         to_open_image = "plantimage/no_image.jpg"
         return FileResponse(to_open_image, media_type="image/jpg")
-    
-    
+
 
 @app.get("/plant/{crop}")
 async def get_Crop_Info(crop: str):
     crop = crop.lower()
     to_return = [d for d in plant_details if d.get("crop") == crop]
     return to_return
-
 
 
 @app.get("/{crop}")
@@ -350,7 +363,7 @@ async def get_Crop(crop: str):
     #     return to_return
     # else:
     #     return {"message": f"{crop} no on the list"}
-        
+
 
 # @app.get("/Onion/{stress}")
 # async def get_Onion(stress: str):
@@ -359,7 +372,7 @@ async def get_Crop(crop: str):
 #             return i
 #     else:
 #         return {"message": "Stress not found"}
-    
+
 # @app.get("/Corn/{stress}")
 # async def get_Corn(stress: str):
 #     for i in corn_data.stress_dict:
@@ -367,7 +380,7 @@ async def get_Crop(crop: str):
 #             return i
 #     else:
 #         return {"message": "Stress not found"}
-    
+
 # @app.get("/Eggplant/{stress}")
 # async def get_Eggplant(stress: str):
 #     for i in eggplant_data.stress_dict:
@@ -375,7 +388,7 @@ async def get_Crop(crop: str):
 #             return i
 #     else:
 #         return {"message": "Stress not found"}
-    
+
 # @app.get("/Tomato/{stress}")
 # async def get_Tomato(stress: str):
 #     for i in tomato_data.stress_dict:
